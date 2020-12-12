@@ -1,1 +1,1 @@
-Please read READ.md file before rating this project
+Please read Readme.md file before rating this project
