@@ -25,8 +25,8 @@ class Mobiephone:
         if(ch == 1):
             cho = int(input("Select the Mobile from list above: "))
             if(cho > 3):
-                print("A request has already been sent to add details of",
-                      "this Mobile. Please give us some time to add")
+                print("\nInvalid Input. If requested to add a Mobile's",
+                      "Specification. Please give us some time to add")
             else:
                 print("")
                 print("Mobile Name - ", self.mobilenames[cho-1],
@@ -34,6 +34,10 @@ class Mobiephone:
                       self.ROM[cho-1], "GB\nProcessor \t- ", self.proce[cho-1],
                       "\nBattery \t- ", self.battery[cho-1],
                       "mAh\nDisplay \t- ", self.disp[cho-1], "inches")
+        elif(ch == 2):
+            pass
+        else:
+            print("\nInvalid Input")
 
     def add1mobile(self):
         mobilename = input("Enter the name of the mobile you want to request:")
