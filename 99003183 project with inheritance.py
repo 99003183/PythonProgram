@@ -44,7 +44,7 @@ class Mobileinfo(Mobiledata):
             print("\nInvalid Input")
 
 
-class mobileadd(Mobiledata):
+class mobileadd(Mobileinfo):
     def add1mobile(self):
         mobilenam = input("Enter the name of the mobile you want to request: ")
         self.mobilename.append(mobilenam)
