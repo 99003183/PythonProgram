@@ -1,4 +1,5 @@
 import sys
+import re
 
 
 class Mobiledata:
@@ -25,10 +26,11 @@ class Mobileinfo(Mobiledata):
         2. No""")
         ch = int(input("Enter Choice: "))
         if(ch == 1):
-            cho = int(input("Select the Mobile from list above: "))
+            print("Enter the Serial No. of Mobile from list above: ")
+            cho = int(input())
             if(cho > 3):
-                print("A request has already been sent to add details of",
-                      "this Mobile. Please give us some time to add")
+                print("\nInvalid Input. If requested to add a Mobile's",
+                      "Specification. Please give us some time to add")
             else:
                 print("")
                 print("Mobile Name - ", self.mobilename[cho-1],
@@ -36,6 +38,10 @@ class Mobileinfo(Mobiledata):
                       self.ROM[cho-1], "GB\nProcessor \t- ", self.proce[cho-1],
                       "\nBattery \t- ", self.battery[cho-1],
                       "mAh\nDisplay \t- ", self.disp[cho-1], "inches")
+        elif(ch == 2):
+            pass
+        else:
+            print("\nInvalid Input")
 
 
 class mobileadd(Mobiledata):
@@ -54,12 +60,16 @@ def main():
               ======Mobile Phone Guide by Akshay Sai Reddy G=======
               1. Display all mobiles list
               2. Request Admin to add a Mobile's Specification
+              3. View Patter Matching(using Regular Expression)
               0. Exit""")
-        choice = int(input("Enter Choice:"))
+        choice = int(input("Enter Choice number:"))
         if choice == 1:
             mp.displayAvailablemobiles()
         elif choice == 2:
             mp1.add1mobile()
+        elif choice == 3:
+            print("\nPattern Matching for \'akshaysai@gmail.com' is:")
+            print(re.match("[a-z]+@[a-z]+.[a-z]+", "akshaysai@gmail.com"))
         elif choice == 0:
             sys.exit()
         else:
